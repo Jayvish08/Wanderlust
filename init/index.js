@@ -1,6 +1,35 @@
+require('dotenv').config();
+const express = require("express");
+const app = express();
 const mongoose = require("mongoose");
 const initData = require("./data.js");
 const Listing  = require("../models/listing.js");
+const session = require("express-session");
+const MongoStore = require('connect-mongo');
+
+const store = MongoStore.create({
+    mongoUrl: dbUrl,
+    crypto: {
+        secret: process.env.SECRET
+    },
+    touchAfter: 24 * 3600
+})
+
+store.on("error",(err)=>{
+    console.log("Error in Mongo Session store ",err);
+})
+
+const sessionOptions = {
+    store,
+    secret : process.env.SECRET,
+    resave : false,
+    saveUninitialized : true,
+    cookie : {
+        expires : Date.now() + 7 * 24 * 60 * 60 * 1000,
+        maxAge : 7 * 24 * 60 * 60 * 1000,
+        httpOnly : true,
+    }
+}
 
 const mongo_url = "mongodb://127.0.0.1:27017/wanderlust";
 
