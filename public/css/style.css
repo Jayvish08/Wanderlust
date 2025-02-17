@@ -125,8 +125,11 @@ body{
 
 #filters{
     display: flex;
-    flex-wrap: wrap;
+    overflow-x: auto; 
+    white-space: nowrap;
+    scrollbar-width: thin;
     align-items: center;
+    max-width: 100%;
   }
   .filter{
     margin-right: 2rem;
@@ -154,7 +157,9 @@ body{
   .tax-info{
     display: none;
   }
-
+.tax{
+    display: inline-block;
+}
   .tax-toggle{
     border: 1px solid rgb(213, 210, 210);
     border-radius: 1rem;

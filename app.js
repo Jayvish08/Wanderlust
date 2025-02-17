@@ -19,7 +19,7 @@ const listingsRouter = require("./routes/listing.js");
 const reviewsRouter = require("./routes/review.js");
 const usersRouter = require("./routes/user.js");
 
-// const mongo_url = "mongodb://127.0.0.1:27017/wanderlust";
+const mongo_url = "mongodb://127.0.0.1:27017/wanderlust";
 const dbUrl = process.env.ATLASDB_URL;
 
 main().then((res)=>{
@@ -32,7 +32,7 @@ async function main() {
 }
 
 const store = MongoStore.create({
-    mongoUrl: dbUrl,
+    mongoUrl: mongo_url,
     crypto: {
         secret: process.env.SECRET
     },

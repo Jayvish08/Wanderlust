@@ -5,7 +5,7 @@
     const title = <%- JSON.stringify(listing.title) %>;
 </script>
 <div class="row">
-    <div class="c   ol-8 offset-md-3 mt-3">
+    <div class="col-8 offset-md-3 mt-3">
         <h3><%= listing.title %></h3>
     </div>
         <div class="col-md-6 offset-md-3">
@@ -22,13 +22,13 @@
         </div>
         <% if(currUser && listing.owner._id.equals(currUser._id)) {%>
     <div class="btns mb-3">
-        <a href="/listings/<%= listing._id %>/edit" class="btn btn-dark col-1 offset-md-3" >Edit</a>
+        <a href="/listings/<%= listing._id %>/edit" class="btn btn-dark offset-md-3" >Edit</a>
         <form action="/listings/<%= listing._id %>/?_method=DELETE" method="post">
-            <button class="btn btn-dark offset-5">Delete</button>
+            <button class="btn btn-dark offset-1 offset-md-5 offset-sm-3">Delete</button>
         </form>
     </div>
     <% } %>
-    <div class="col-8 offset-3 mb-3">
+    <div class="col-8 offset-md-3 mt-3">
         <hr>
         <% if(currUser) {%>
         <h4>Leave a Review</h4>
@@ -65,7 +65,7 @@
         <div class="row">
             <% for(review of listing.reviews){%>
                 
-                <div class="card mb-3 ms-3 col-5">
+                <div class="card mb-3 ms-3 col-md-5 offset-md-3">
                     <div class="card-body">
                         <h5 class="card-title mt-1"><b>@<%= review.author.username %></b></h5>
                         <p class="starability-result card-text" data-rating="<%= review.rating %>"></p>
@@ -81,7 +81,7 @@
             <% } %>
             </div>
     </div>
-    <div class="col-8 offset-3 mb-3">
+    <div class="col-12 offset-md-3 mb-3">
         <h3>Where you'll be</h3>
         <div id="map" style="width: 100%; max-width: 600px; height: 300px;"></div>
     </div>

@@ -27,23 +27,31 @@
   border-radius: 7rem;
   box-shadow: 1px 1px 10px rgba(128, 128, 128, 0.5);
 }
-
+.navbar-toggler {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+.make-space{
+  margin-bottom: 140px;
+}
 </style>
-<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
-    <div class="container-fluid">
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top" id="nav-line">
+    <div class="container-fluid" >
       <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a>
-      <button 
-      class="navbar-toggler" 
-      type="button" 
+      <button id="myButton" class="hamburger hamburger--spin navbar-toggler " type="button" 
       data-bs-toggle="collapse" 
-      data-bs-target="#navbarNavAltMarkup">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      data-bs-target="#navbarNavAltMarkup"
+      >
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button> 
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-link" href="/listings">Explore</a>
         </div>
-        <div class="navbar-nav ms-auto ">
+        <div class="navbar-nav ms-auto " id="elementToHide">
           <nav class="navbar border-bottom ">
             <div class="container-fluid srch-con">
               <form class="d-flex" role="search">
@@ -66,3 +74,14 @@
       </div>
     </div>
   </nav>
+  <script>
+            document.getElementById("myButton").addEventListener("click", function() {
+            this.classList.toggle("is-active");
+            let navMenu = document.getElementById("navbarNavAltMarkup");
+            navMenu.classList.toggle("mt-3"); 
+            let filters = document.getElementById("nav-line");
+            filters.classList.toggle("make-space");
+            document.getElementById("elementToHide").style.display = "none"; 
+        });
+
+  </script>
