@@ -17,7 +17,7 @@ body{
 }
 
 .fa-compass{
-    color: #fe424d;
+    color: #85168d;
     font-size: 2rem;
 }
 
@@ -51,7 +51,7 @@ body{
     text-align: center;
     display: flex;
     height: 8rem;
-    background-color: #ebebeb;
+    background-color: #D69ADE;
     flex-wrap: wrap;
     justify-content: center;
     align-items: space-evenly;
@@ -172,5 +172,3 @@ body{
   .tax-toggle:hover{
     background-color: rgb(238, 235, 235);
   }
-
-  /* Search Option Styling */

@@ -1,14 +1,14 @@
 <style>
     .search-btn{
-    background-color: #fe424d;
+    background-color: #c242fe;
     color: white;
-    border: #fe424d;
+    border: #c242fe;
     border-radius: 25px;
     padding: 0rem 1rem 0rem 1rem;
 }
 
 .search-btn:hover{
-        background-color: #fe424d;
+        background-color: #c242fe;
         color: white;
 }
 
@@ -62,13 +62,13 @@
           </nav>
         </div>
         <div class="navbar-nav ms-auto">
-          <a class="nav-link" href="/listings/new">Airbnb your home</a>
+          <a class="nav-link" href="/listings/new">Airbnb your home &nbsp;</a>
           <% if(!currUser) { %>
           <a class="nav-link" href="/signup"><b>SignUp</b> </a>
-          <a class="nav-link" href="/login"><b>Login</b></a>
+          <a class="nav-link" href="/login"><b>Login</b> <i class="fa-solid fa-right-to-bracket"></i></a>
           <% } %>
           <% if(currUser) { %>
-          <a class="nav-link" href="/logout">Logout</a>
+          <a class="nav-link" href="/logout"><i class="fa-solid fa-right-from-bracket"></i> <b>Logout </b></a>
           <% } %>
         </div>
       </div>
