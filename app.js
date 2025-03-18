@@ -28,11 +28,11 @@ main().then((res)=>{
     console.log("Something Went Wrong :(");
 })
 async function main() {
-    await mongoose.connect(mongo_url);
+    await mongoose.connect(dbUrl);
 }
 
 const store = MongoStore.create({
-    mongoUrl: mongo_url,
+    mongoUrl: dbUrl,
     crypto: {
         secret: process.env.SECRET
     },
